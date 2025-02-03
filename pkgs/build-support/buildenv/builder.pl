@@ -129,7 +129,6 @@ sub findFiles {
         $relName =~ /info\/dir$/ ||
         ( $relName =~ /^\/share\/mime\// && !( $relName =~ /^\/share\/mime\/packages/ ) ) ||
         $baseName eq "perllocal.pod" ||
-        $baseName eq "log" ||
         ! (hasPathsToLink($relName) || isInPathsToLink($relName));
 
     my ($oldTarget, $oldPriority) = @{$symlinks{$relName} // [undef, undef]};
